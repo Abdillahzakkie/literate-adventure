@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Gasify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="./index.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.3.4/web3.min.js"></script>
+  <script defer type="module" src="./js/index.js"></script>
+  <script defer src="./js/clipboard.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div class="main-nav">
+      <div class="logo">
+        <img src="assets/images/logo.png" />
+        <p class="heading">GASIFY</p>
+      </div>
+      <p class="dashboard-heading">DASHBOARD</p>
+      <div class="header-right-web">
+        <p class="access-code" onclick="copyToClipboard('copy-access-code')">
+          <span class="walletAddress" id="copy-access-code">0X48XX647</span>
+          <img src="assets/images/copybutton.png" />
+        </p>
+      </div>
+      <img src="assets/images/bar.svg" class="bar" id="bar" onclick="toggleContent()" />
+      <img src="assets/images/close.svg" class="close-icon d-none" id="close" onclick="toggleContent()" />
+    </div>
+    <div class="mobile-header d-none" id="dropdown-content">
+      <div class="header-right-mobile">
+        <p class="access-code" onclick="copyToClipboard('copy-access-code-mobile')"><span
+            id="copy-access-code">0X48XX647</span>
+          <img src="assets/images/copybutton.png" />
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Stats and bot -->
+  <div class="stats-and-tips">
+    <div class="gas-stats">
+      <p class="heading">
+        <img src="assets/images/gas-45x50.png" />
+        GAS STATS
+      </p>
+      <div class="stats-features">
+        <div class="feature">
+          <p class="feature-heading">ETHER SPENT ON GAS TILL DATE</p>
+          <p class="feature-amount total-eth-used">0.00 ETH</p>
+        </div>
+        <div class="feature">
+          <p class="feature-heading">AVG COST OF GAS PER TXN</p>
+          <p class="feature-amount average-gas-per-txn">0.00 GWEI</p>
+        </div>
+        <div class="feature">
+          <p class="feature-heading">COST OF FAILED TXNs</p>
+          <p class="feature-amount failed-gas-txns">0.00 ETH</p>
+        </div>
+      </div>
+    </div>
+    <div class="bot-tips">
+      <p class="heading">
+        <img src="assets/images/bot-70x50.png" />
+        AI BOT TIPS
+      </p>
+      <div class="scroll-content">
+        <ul id="scroll-list">
+          <li>
+            <span class="bullet"></span>First Lorem ipsum is a dummy text get it done
+          </li>
+          <li>
+            <span class="bullet"></span>Second Lorem ipsum is a dummy text get it done
+          </li>
+          <li>
+            <span class="bullet"></span>Third Lorem ipsum is a dummy text get it done
+          </li>
+          <li>
+            <span class="bullet"></span>Fourth Lorem ipsum is a dummy text get it done
+          </li>
+          <li>
+            <span class="bullet"></span>Fifth Lorem ipsum is a dummy text get it done
+          </li>
+          <li>
+            <span class="bullet"></span>Sixth Lorem ipsum is a dummy text get it done
+          </li>
+        </ul>
+        <div class="arrows">
+          <img src="assets/images/Arrow-up.png" onclick="onUpArrow()">
+          <img src="assets/images/Arrow-down.png" onclick="onDownArrow()">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Token Table -->
+  <div class="token-details">
+    <div class="table-wrapper">
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>TOKEN NAME</th>
+            <th>TOKEN BALANCE</th>
+            <th>TOTAL CASHBACK</th>
+            <th>STAKED BALANCE</th>
+            <th>UPCOMING CASHBACK</th>
+            <th>CLAIMABLE CASHBACK</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="large-headings">1</td>
+            <td class="large-headings">ENOL</td>
+            <td class="enol-user-token-balance">0.00 ENOL</td>
+            <td>0.00 ENOL</td>
+            <td class="enol-staked-balance">0.00 ENOL</td>
+            <td>0.00 ENOL</td>
+            <td class="enol-claimable-cashback">0.00 ENOL</td>
+            <td><button type="button" class="enol-claim-cashback">CLAIM</button></td>
+          </tr>
+
+          <tr>
+            <td class="large-headings">2</td>
+            <td class="large-headings">GASG</td>
+            <td class="gasg-user-token-balance">0.00 GASG</td>
+            <td>0.00 ENOL</td>
+            <td class="gasg-staked-balance">0.00 GASG</td>
+            <td class="gasg-upcoming-rewards">0.00 GASG</td>
+            <td class="gasg-claimable-cashback">0.00 GASG</td>
+            <td class="gasg-claim-cashback"><button type="button">CLAIM</button></td>
+          </tr>
+
+          <tr>
+            <td class="large-headings">3</td>
+            <td class="large-headings">UNDG</td>
+            <td class="undg-user-token-balance">10.00 UNDG</td>
+            <td>0.00 UNDG</td>
+            <td class="undg-staked-balance">0.00 UNDG</td>
+            <td class="undg-upcoming-rewards">0.00 UNDG</td>
+            <td class="undg-claimable-cashback">0.00 UNDG</td>
+            <td class="undg-claim-cashback">
+              <!-- <button type="button">CLAIM</button> -->
+            </td>
+          </tr>
+
+          <tr>
+            <td class="large-headings">4</td>
+            <td class="large-headings">GCB</td>
+            <td class="gcb-user-token-balance">0.00 GCB</td>
+            <td>0.00 GCB</td>
+            <td class="gcb-staked-balance">0.00 GCB</td>
+            <td class="gcb-upcoming-rewards">0.00 GCB</td>
+            <td class="gcb-claimable-cashback">0.00 GCB</td>
+            <td class="gcb-claim-cashback">
+              <!-- <button type="button">CLAIM</button> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Transaction table -->
+  <div class="transaction-details">
+    <p class="heading">TRANSACTIONS</p>
+    <div class="table-wrapper">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Hash</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Txn Fee(USD)</th>
+            <th>Cashback</th>
+          </tr>
+        </thead>
+        <tbody class="inject-txns-lists">
+          <!-- <tr>
+            <td>0</td>
+            <td>1234</td>
+            <td>ABC</td>
+            <td>XYZ</td>
+            <td>500</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>122234</td>
+            <td>ABCD</td>
+            <td>XYZ</td>
+            <td>500</td>
+            <td>100</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #010514;
+  color: #fff;
+  padding: 0 30px;
+  font-family: "Poppins";
+  margin: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* Header css */
+
+header .main-nav {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  display: table;
+  text-align: center;
+}
+header .logo img {
+  width: 50px;
+}
+header .logo .heading {
+  font-size: 20px;
+}
+header .dashboard-heading {
+  font-size: 30px;
+  font-weight: 600;
+}
+header .header-right-web {
+  display: flex;
+}
+header .access-code {
+  border: 2px solid #5fbec5;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+header .access-code img {
+  margin-left: 5px;
+  width: 20px;
+}
+header .access-code span {
+  white-space: nowrap;
+  width: 120px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+header .mobile-header,
+header .bar,
+header .close-icon,
+header .header-right-mobile {
+  display: none;
+}
+
+/* Stats and Tips */
+
+.stats-and-tips {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 3fr 1fr;
+  margin-top: 30px;
+}
+.stats-and-tips .gas-stats {
+  box-shadow: 0px 0px 10px #5fbec5;
+  border-radius: 10px;
+  padding: 10px 15px 30px 15px;
+  background-image: linear-gradient(
+    to top,
+    #1c2237,
+    #171d31,
+    #12182a,
+    #0e1324,
+    #070c1e
+  );
+}
+.stats-and-tips .gas-stats .heading {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stats-and-tips .gas-stats .heading img {
+  margin-right: 10px;
+}
+.stats-and-tips .gas-stats .stats-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+}
+.stats-and-tips .gas-stats .stats-features .feature {
+  border: 1px solid #5fbec5;
+  border-radius: 10px;
+  padding: 30px 20px 20px 20px;
+  text-align: center;
+  background: #070c1e;
+}
+.stats-and-tips .gas-stats .stats-features .feature .feature-heading {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #fff;
+  font-size: 22px;
+}
+.stats-and-tips .gas-stats .stats-features .feature .feature-amount {
+  font-size: 30px;
+  padding-top: 50px;
+}
+.stats-and-tips .bot-tips {
+  box-shadow: 0px 0px 10px #5fbec5;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    to top,
+    #1c2237,
+    #171d31,
+    #12182a,
+    #0e1324,
+    #070c1e
+  );
+  padding: 10px 15px 30px 15px;
+}
+.stats-and-tips .bot-tips .heading {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stats-and-tips .bot-tips .heading img {
+  margin-right: 10px;
+}
+.stats-and-tips .bot-tips .scroll-content {
+  border: 1px solid #5fbec5;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 20px;
+  background: #070c1e;
+  display: flex;
+}
+.stats-and-tips .bot-tips .scroll-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  overflow: auto;
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.stats-and-tips .bot-tips .scroll-content ul::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+.stats-and-tips .bot-tips .scroll-content li {
+  margin-bottom: 20px;
+}
+.stats-and-tips .bot-tips .scroll-content li .bullet {
+  background: cyan;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+.stats-and-tips .bot-tips .scroll-content li:last-child {
+  margin-bottom: 0;
+}
+.stats-and-tips .bot-tips .scroll-content .arrows {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+/* Token Details */
+
+.token-details {
+  margin: 0 -30px;
+  padding-top: 50px;
+}
+.token-details .table-wrapper {
+  overflow-x: auto;
+  max-height: 480px;
+}
+.token-details .table-wrapper .token-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.token-details .table-wrapper .token-table thead {
+  font-size: 20px;
+}
+.token-details .table-wrapper .token-table thead th {
+  padding: 20px;
+  font-weight: normal;
+  background-color: #010514;
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+.token-details .table-wrapper .token-table tbody {
+  font-size: 18px;
+}
+
+.token-details .table-wrapper .token-table tbody::before {
+  content: "-";
+  display: block;
+  line-height: 1em;
+  color: transparent;
+}
+
+.token-details .table-wrapper .token-table tbody tr {
+  background: #1c2237;
+}
+.token-details .table-wrapper .token-table tbody tr::after {
+  height: 1em;
+  display: table-row;
+  content: "";
+}
+.token-details .table-wrapper .token-table tbody td {
+  padding: 15px;
+  border-bottom: 15px solid#010514;
+}
+.token-details .table-wrapper .token-table tbody td .large-headings {
+  font-size: 20px;
+}
+.token-details .table-wrapper .token-table tbody td:not(.large-headings) {
+  font-size: 14px;
+}
+.token-details .table-wrapper .token-table tbody td:last-child button {
+  background: #00aeef;
+  color: #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 0;
+}
+
+/* Transaction Details */
+
+.transaction-details {
+  margin: 30px 0;
+}
+.transaction-details .heading {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.transaction-details .table-wrapper {
+  overflow-x: auto;
+  max-height: 480px;
+}
+.transaction-details .table-wrapper .transaction-table {
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  border: 3px solid #1c2237;
+  border-radius: 10px;
+}
+.transaction-details .table-wrapper .transaction-table thead {
+  background: #1c2237;
+  font-size: 20px;
+}
+.transaction-details .table-wrapper .transaction-table thead th {
+  padding: 5px;
+  font-weight: normal;
+  font-size: 18px;
+}
+.transaction-details .table-wrapper .transaction-table tbody {
+  font-size: 18px;
+}
+.transaction-details .table-wrapper .transaction-table tbody td {
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 1023px) {
+  header .header-right-web {
+    display: none;
+  }
+  header .mobile-header {
+    display: block;
+  }
+  header .bar {
+    display: block;
+    width: 30px;
+  }
+  header .close-icon {
+    display: block;
+    width: 25px;
+  }
+  header .header-right-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  header .logo .heading {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+
+  .stats-and-tips {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .token-details {
+    margin: 0 -15px;
+  }
+  .token-details .table-wrapper .token-table thead th {
+    font-size: 15px;
+  }
+  .token-details .table-wrapper .token-table tbody td .large-headings {
+    font-size: 16px;
+  }
+
+  .transaction-details .table-wrapper .transaction-table thead th {
+    font-size: 15px;
+  }
+  .transaction-details .table-wrapper .transaction-table tbody td {
+    font-size: 16px;
+  }
+}
